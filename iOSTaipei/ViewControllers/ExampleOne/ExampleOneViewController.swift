@@ -43,9 +43,6 @@ class ExampleOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.automaticallyAdjustsScrollViewInsets = false
-//        self.setData()
-//        tableView.contentInsetAdjustmentBehavior = .scrollableAxes
         tableView.estimatedRowHeight = 120
         // Do any additional setup after loading the view.
     }
