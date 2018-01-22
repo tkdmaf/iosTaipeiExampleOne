@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowDogTransitionManager: NSObject , UIViewControllerAnimatedTransitioning , UIViewControllerTransitioningDelegate {
+class FadeInTransitionManager: NSObject , UIViewControllerAnimatedTransitioning , UIViewControllerTransitioningDelegate {
     
     let duration = 0.75
     var isPresenting = false
@@ -30,15 +30,17 @@ class ShowDogTransitionManager: NSObject , UIViewControllerAnimatedTransitioning
         let container = transitionContext.containerView
         let width = container.frame.width
         let height = container.frame.height
+        let scaleOut = CGAffineTransform(scaleX: 0.1, y: 0.1)
         
-//        snapshot?.alpha = 0.5
         if isPresenting {
             snapshot = fromView.snapshotView(afterScreenUpdates: true)
-            toView.frame = CGRect(x: 20, y: -height / 2, width: width - 40, height: height / 2)
+            
+            toView.frame = CGRect(x: 20, y:  height / 4, width: width - 40, height: height / 2)
             toView.layer.cornerRadius = 10
             toView.clipsToBounds = true
             fromView.alpha = 0
             toView.alpha = 0
+            toView.transform = scaleOut
             container.addSubview(snapshot!)
             container.addSubview(toView)
         }else{
@@ -46,14 +48,16 @@ class ShowDogTransitionManager: NSObject , UIViewControllerAnimatedTransitioning
             container.addSubview(fromView)
         }
         
+        
+        
         UIView.animate(withDuration: duration, animations: {
             if self.isPresenting {
-                toView.frame.origin.y = height / 4
                 self.snapshot?.alpha = 0.5
                 toView.alpha = 1.0
+                toView.transform = CGAffineTransform.identity
             }else{
-                fromView.frame.origin.y = -height / 2
                 fromView.alpha = 0
+                fromView.transform = scaleOut
                 toView.alpha = 1.0
             }
         }, completion: { _ in
@@ -68,15 +72,18 @@ class ShowDogTransitionManager: NSObject , UIViewControllerAnimatedTransitioning
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        print("forPresented")
         isPresenting = true
         return self
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        print("forDismissed")n
         isPresenting = false
         return self
     }
     
     
 }
+
 

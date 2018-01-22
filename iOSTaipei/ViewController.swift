@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var exampleOneButton: UIButton!
+    @IBOutlet var fadeInDogButton: UIButton!
+    
     
     let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
@@ -30,7 +32,10 @@ class ViewController: UIViewController {
         switch sender {
             
         case exampleOneButton:
-            self.exampleOnePage()
+            self.exampleOnePage(ShowDogTransitionManager())
+            
+        case fadeInDogButton:
+            self.exampleOnePage(FadeInTransitionManager())
             
         default:
             return
@@ -38,8 +43,9 @@ class ViewController: UIViewController {
         
     }
     
-    func exampleOnePage() {
+    func exampleOnePage(_ transition:UIViewControllerTransitioningDelegate) {
         let destination = mainSB.instantiateViewController(withIdentifier: "ExampleOneViewController") as! ExampleOneViewController
+        destination.transitionManager = transition
         let nav = UINavigationController(rootViewController: destination)
         nav.transitioningDelegate = transitionManager
         self.present(nav, animated: true, completion:nil )

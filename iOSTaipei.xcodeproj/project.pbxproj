@@ -20,6 +20,7 @@
 		B678C721201594740068A796 /* DogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C720201594740068A796 /* DogCollectionViewCell.swift */; };
 		B6AD46FE201646970068203B /* ShowDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD46FD201646970068203B /* ShowDogViewController.swift */; };
 		B6AD4700201649720068203B /* ShowDogTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD46FF201649720068203B /* ShowDogTransition.swift */; };
+		B6AD4702201655EF0068203B /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD4701201655EF0068203B /* FadeInTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B678C720201594740068A796 /* DogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6AD46FD201646970068203B /* ShowDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDogViewController.swift; sourceTree = "<group>"; };
 		B6AD46FF201649720068203B /* ShowDogTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDogTransition.swift; sourceTree = "<group>"; };
+		B6AD4701201655EF0068203B /* FadeInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				B678C7162014EEC40068A796 /* NextPageTransition.swift */,
 				B6AD46FF201649720068203B /* ShowDogTransition.swift */,
+				B6AD4701201655EF0068203B /* FadeInTransition.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				B678C7142014EAD60068A796 /* ExampleOneViewController.swift in Sources */,
 				B678C7172014EEC40068A796 /* NextPageTransition.swift in Sources */,
 				B678C7192014F0B20068A796 /* DogCollectionView.swift in Sources */,
+				B6AD4702201655EF0068203B /* FadeInTransition.swift in Sources */,
 				B678C6E42014E7750068A796 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -40,7 +40,8 @@ class ExampleOneViewController: UIViewController {
     ]
     
     var collectionViewResult:[DogCollectionView] = []
-    let transitionManager = ShowDogTransitionManager()
+    var transitionManager:UIViewControllerTransitioningDelegate!
+//    let transitionManager = ShowDogTransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
