@@ -10,7 +10,7 @@ import UIKit
 
 class NextPageTransitionManager: NSObject , UIViewControllerAnimatedTransitioning , UIViewControllerTransitioningDelegate {
     
-    let duration = 0.35
+    let duration = 0.5
     var isPresenting = false
     var snapshot:UIView?
     

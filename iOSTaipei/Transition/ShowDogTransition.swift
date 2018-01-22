@@ -10,7 +10,7 @@ import UIKit
 
 class ShowDogTransitionManager: NSObject , UIViewControllerAnimatedTransitioning , UIViewControllerTransitioningDelegate {
     
-    let duration = 0.75
+    let duration = 0.5
     var isPresenting = false
     var snapshot:UIView?
     
