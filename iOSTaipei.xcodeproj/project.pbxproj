@@ -18,6 +18,8 @@
 		B678C7172014EEC40068A796 /* NextPageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C7162014EEC40068A796 /* NextPageTransition.swift */; };
 		B678C7192014F0B20068A796 /* DogCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C7182014F0B20068A796 /* DogCollectionView.swift */; };
 		B678C721201594740068A796 /* DogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C720201594740068A796 /* DogCollectionViewCell.swift */; };
+		B6AD46FE201646970068203B /* ShowDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD46FD201646970068203B /* ShowDogViewController.swift */; };
+		B6AD4700201649720068203B /* ShowDogTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD46FF201649720068203B /* ShowDogTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B678C7162014EEC40068A796 /* NextPageTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPageTransition.swift; sourceTree = "<group>"; };
 		B678C7182014F0B20068A796 /* DogCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCollectionView.swift; sourceTree = "<group>"; };
 		B678C720201594740068A796 /* DogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6AD46FD201646970068203B /* ShowDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDogViewController.swift; sourceTree = "<group>"; };
+		B6AD46FF201649720068203B /* ShowDogTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDogTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 				B678C7132014EAD60068A796 /* ExampleOneViewController.swift */,
 				B678C7182014F0B20068A796 /* DogCollectionView.swift */,
 				B678C720201594740068A796 /* DogCollectionViewCell.swift */,
+				B6AD46FD201646970068203B /* ShowDogViewController.swift */,
 			);
 			path = ExampleOne;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				B678C7162014EEC40068A796 /* NextPageTransition.swift */,
+				B6AD46FF201649720068203B /* ShowDogTransition.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -295,6 +301,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6AD4700201649720068203B /* ShowDogTransition.swift in Sources */,
+				B6AD46FE201646970068203B /* ShowDogViewController.swift in Sources */,
 				B678C6E62014E7750068A796 /* ViewController.swift in Sources */,
 				B678C721201594740068A796 /* DogCollectionViewCell.swift in Sources */,
 				B678C7142014EAD60068A796 /* ExampleOneViewController.swift in Sources */,

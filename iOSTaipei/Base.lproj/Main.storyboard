@@ -97,5 +97,50 @@
             </objects>
             <point key="canvasLocation" x="753.75" y="133.09859154929578"/>
         </scene>
+        <!--Show Dog View Controller-->
+        <scene sceneID="jxh-PO-lGb">
+            <objects>
+                <viewController storyboardIdentifier="ShowDogViewController" id="Dhw-rg-cI1" customClass="ShowDogViewController" customModule="iOSTaipei" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eAN-9H-NA8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q4D-4u-msI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhD-z2-ATu">
+                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E2l-aZ-dZC"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissEvent:" destination="Dhw-rg-cI1" eventType="touchUpInside" id="3VF-II-5zb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q4D-4u-msI" firstAttribute="leading" secondItem="IKy-VL-XxR" secondAttribute="leading" id="CV5-Uq-QV6"/>
+                            <constraint firstAttribute="bottom" secondItem="FhD-z2-ATu" secondAttribute="bottom" id="Dg7-gY-7I5"/>
+                            <constraint firstItem="FhD-z2-ATu" firstAttribute="top" secondItem="Q4D-4u-msI" secondAttribute="bottom" id="Lbu-z6-qHo"/>
+                            <constraint firstItem="Q4D-4u-msI" firstAttribute="top" secondItem="eAN-9H-NA8" secondAttribute="top" id="Qyt-rs-n2G"/>
+                            <constraint firstItem="Q4D-4u-msI" firstAttribute="trailing" secondItem="IKy-VL-XxR" secondAttribute="trailing" id="VRT-5a-dK9"/>
+                            <constraint firstItem="FhD-z2-ATu" firstAttribute="trailing" secondItem="IKy-VL-XxR" secondAttribute="trailing" id="XYO-29-ck1"/>
+                            <constraint firstItem="FhD-z2-ATu" firstAttribute="leading" secondItem="IKy-VL-XxR" secondAttribute="leading" id="erH-HR-ldz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IKy-VL-XxR"/>
+                    </view>
+                    <connections>
+                        <outlet property="dogImageView" destination="Q4D-4u-msI" id="I1v-A0-PUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JdM-1l-HBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520.625" y="132.04225352112675"/>
+        </scene>
     </scenes>
 </document>

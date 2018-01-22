@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol DogProtocol {
+    
+    func dogSelected(dogString:String)
+    
+}
+
 class DogCollectionView: UICollectionView {
     
-    var data : [String] = [] 
+    var data : [String] = []
+    var dogDelegate:DogProtocol?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -45,6 +52,11 @@ extension DogCollectionView : UICollectionViewDelegate , UICollectionViewDataSou
         cell.imageView.image = UIImage(named: item)
         cell.backgroundColor = UIColor.lightGray
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = data[indexPath.row]
+        self.dogDelegate?.dogSelected(dogString: item)
     }
 
 

@@ -40,6 +40,7 @@ class ExampleOneViewController: UIViewController {
     ]
     
     var collectionViewResult:[DogCollectionView] = []
+    let transitionManager = ShowDogTransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,25 +63,15 @@ class ExampleOneViewController: UIViewController {
     
 }
 
-extension ExampleOneViewController {
+extension ExampleOneViewController : DogProtocol {
     
-    func showCollection(_ index:Int) -> DogCollectionView{
-        guard collectionViewResult.count <= index else {
-            print("reuse")
-            return collectionViewResult[index]
+    func dogSelected(dogString: String) {
+        print(dogString)
+        if let destination = self.storyboard?.instantiateViewController(withIdentifier: "ShowDogViewController") as? ShowDogViewController {
+            destination.dogString = dogString
+            destination.transitioningDelegate = transitionManager
+            self.present(destination, animated: true, completion: nil)
         }
-        print("create")
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: 120, height: 120)
-        layout.scrollDirection = .horizontal
-        let collectionFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 120)
-        let collection = DogCollectionView(frame: collectionFrame, collectionViewLayout: layout)
-        collection.contentInsetAdjustmentBehavior = .never
-        collection.data = datas[index]
-        collection.reloadData()
-        collectionViewResult.append(collection)
-        return collection
     }
     
 }
@@ -101,6 +92,26 @@ extension ExampleOneViewController : UITableViewDelegate , UITableViewDataSource
         let collection = showCollection(indexPath.row)
         cell.addSubview(collection)
         return cell
+    }
+    
+    func showCollection(_ index:Int) -> DogCollectionView{
+        guard collectionViewResult.count <= index else {
+            print("reuse")
+            return collectionViewResult[index]
+        }
+        print("create")
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.scrollDirection = .horizontal
+        let collectionFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 120)
+        let collection = DogCollectionView(frame: collectionFrame, collectionViewLayout: layout)
+        collection.dogDelegate = self
+        collection.contentInsetAdjustmentBehavior = .never
+        collection.data = datas[index]
+        collection.reloadData()
+        collectionViewResult.append(collection)
+        return collection
     }
     
 }
