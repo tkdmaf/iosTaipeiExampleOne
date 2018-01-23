@@ -53,11 +53,18 @@ class ShowDogViewController: UIViewController {
         switch sender.direction {
             
         case .left:
-            self.leftAnimation()
-            
+            dogIndex += 1
+            if dogIndex >= dogsDatas.count {
+                dogIndex = 0
+            }
+            self.executeAnimation(width: windowWidth)
             
         case .right:
-            self.rightAnimation()
+            dogIndex -= 1
+            if dogIndex < 0 {
+                dogIndex = dogsDatas.count - 1
+            }
+            self.executeAnimation(width: -windowWidth)
             
         default:
             return
@@ -65,37 +72,18 @@ class ShowDogViewController: UIViewController {
         
     }
     
-    func leftAnimation(){
-        guard dogIndex < (dogsDatas.count - 1) else {
-            dogIndex = dogsDatas.count - 1
-            snapShot?.removeFromSuperview()
-            return
-        }
-        dogIndex += 1
-        self.executeAnimation(width: windowWidth)
-    }
-    
-    func rightAnimation(){
-        guard dogIndex > 0 else {
-            dogIndex = 0
-            snapShot?.removeFromSuperview()
-            return
-        }
-        dogIndex -= 1
-        self.executeAnimation(width: -windowWidth)
-    }
-    
     func executeAnimation(width:CGFloat) {
         self.titleLabel.text = "\(dogIndex + 1) / \(dogsDatas.count)"
         self.dogImageView.image = UIImage(named: dogsDatas[dogIndex])
         self.view.frame.origin.x = width + 20
         
-        UIView.animate(withDuration: 0.35, animations: {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1, options: [], animations: {
             self.view.frame.origin.x = 20
             self.snapShot?.frame.origin.x = -width + 20
-        },completion:{ _ in
+        }) { (_) in
             self.snapShot?.removeFromSuperview()
-        })
+        }
+        
     }
     
 }
