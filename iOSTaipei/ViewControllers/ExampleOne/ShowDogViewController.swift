@@ -77,11 +77,13 @@ class ShowDogViewController: UIViewController {
         self.dogImageView.image = UIImage(named: dogsDatas[dogIndex])
         self.view.frame.origin.x = width + 20
         
-        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1, options: [], animations: {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1, options: [.curveEaseIn,.curveEaseInOut], animations: {
             self.view.frame.origin.x = 20
             self.snapShot?.frame.origin.x = -width + 20
-        }) { (_) in
-            self.snapShot?.removeFromSuperview()
+        }) { (bool) in
+            if bool {
+                self.snapShot?.removeFromSuperview()
+            }
         }
         
     }

@@ -18,6 +18,12 @@ class ExampleOneViewController: UIViewController {
         ["021","022","023","024","025"],
         ["006","007","008","009","010"],
         ["016","017","018","019","020"],
+        ["026","027"],
+        ["001","002","003","004","005"],
+        ["011","012","013","014","015"],
+        ["021","022","023","024","025"],
+        ["006","007","008","009","010"],
+        ["016","017","018"],
         ["026","027","028","029","030"],
         ["001","002","003","004","005"],
         ["011","012","013","014","015"],
@@ -25,13 +31,7 @@ class ExampleOneViewController: UIViewController {
         ["006","007","008","009","010"],
         ["016","017","018","019","020"],
         ["026","027","028","029","030"],
-        ["001","002","003","004","005"],
-        ["011","012","013","014","015"],
-        ["021","022","023","024","025"],
-        ["006","007","008","009","010"],
-        ["016","017","018","019","020"],
-        ["026","027","028","029","030"],
-        ["001","002","003","004","005"],
+        ["001"],
         ["011","012","013","014","015"],
         ["021","022","023","024","025"],
         ["006","007","008","009","010"],
@@ -109,7 +109,6 @@ extension ExampleOneViewController : UITableViewDelegate , UITableViewDataSource
         let collectionFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 130)
         let collection = DogCollectionView(frame: collectionFrame, collectionViewLayout: layout)
         collection.dogDelegate = self
-        collection.contentInsetAdjustmentBehavior = .never
         collection.data = datas[index]
         collection.reloadData()
         collectionViewResult.append(collection)

@@ -23,6 +23,7 @@
 		B6AD4702201655EF0068203B /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD4701201655EF0068203B /* FadeInTransition.swift */; };
 		B6AD47042016E7C70068203B /* FadeInLocationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD47032016E7C70068203B /* FadeInLocationTransition.swift */; };
 		B6AD47062016EF080068203B /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD47052016EF080068203B /* AppCache.swift */; };
+		B6DAC481201767C300A2617D /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC480201767C300A2617D /* ShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B6AD4701201655EF0068203B /* FadeInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
 		B6AD47032016E7C70068203B /* FadeInLocationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInLocationTransition.swift; sourceTree = "<group>"; };
 		B6AD47052016EF080068203B /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
+		B6DAC480201767C300A2617D /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				B678C7122014EAA00068A796 /* ExampleOne */,
+				B6DAC480201767C300A2617D /* ShowViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				B678C7192014F0B20068A796 /* DogCollectionView.swift in Sources */,
 				B6AD4702201655EF0068203B /* FadeInTransition.swift in Sources */,
 				B678C6E42014E7750068A796 /* AppDelegate.swift in Sources */,
+				B6DAC481201767C300A2617D /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q84FT7WU77;
 				INFOPLIST_FILE = iOSTaipei/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bextrip.iOSTaipei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q84FT7WU77;
 				INFOPLIST_FILE = iOSTaipei/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bextrip.iOSTaipei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
