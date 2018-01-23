@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var exampleOneButton: UIButton!
     @IBOutlet var fadeInDogButton: UIButton!
+    @IBOutlet var fadeInLocationButton: UIButton!
     
     
     let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -36,6 +37,9 @@ class ViewController: UIViewController {
             
         case fadeInDogButton:
             self.exampleOnePage(FadeInTransitionManager())
+            
+        case fadeInLocationButton:
+            self.exampleOnePage(FadeInLocationTransitionManager())
             
         default:
             return

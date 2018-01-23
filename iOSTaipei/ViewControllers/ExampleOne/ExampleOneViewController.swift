@@ -45,7 +45,7 @@ class ExampleOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 130
         // Do any additional setup after loading the view.
     }
 
@@ -66,10 +66,11 @@ class ExampleOneViewController: UIViewController {
 
 extension ExampleOneViewController : DogProtocol {
     
-    func dogSelected(dogString: String) {
-        print(dogString)
+    func dogSelected(_ dogDatas:[String],_ dogIndex:Int,_ position:CGPoint?) {
+        AppCache.touchPosition = position
         if let destination = self.storyboard?.instantiateViewController(withIdentifier: "ShowDogViewController") as? ShowDogViewController {
-            destination.dogString = dogString
+            destination.dogsDatas = dogDatas
+            destination.dogIndex = dogIndex
             destination.transitioningDelegate = transitionManager
             self.present(destination, animated: true, completion: nil)
         }
@@ -80,7 +81,7 @@ extension ExampleOneViewController : DogProtocol {
 extension ExampleOneViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 130
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,10 +103,10 @@ extension ExampleOneViewController : UITableViewDelegate , UITableViewDataSource
         }
         print("create")
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: 120, height: 120)
         layout.scrollDirection = .horizontal
-        let collectionFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 120)
+        let collectionFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 130)
         let collection = DogCollectionView(frame: collectionFrame, collectionViewLayout: layout)
         collection.dogDelegate = self
         collection.contentInsetAdjustmentBehavior = .never

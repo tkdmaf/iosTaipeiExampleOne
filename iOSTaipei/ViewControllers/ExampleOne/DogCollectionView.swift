@@ -10,7 +10,7 @@ import UIKit
 
 protocol DogProtocol {
     
-    func dogSelected(dogString:String)
+    func dogSelected(_ dogDatas:[String],_ dogIndex:Int,_ position:CGPoint?)
     
 }
 
@@ -18,6 +18,7 @@ class DogCollectionView: UICollectionView {
     
     var data : [String] = []
     var dogDelegate:DogProtocol?
+    var position:CGPoint?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -55,10 +56,15 @@ extension DogCollectionView : UICollectionViewDelegate , UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = data[indexPath.row]
-        self.dogDelegate?.dogSelected(dogString: item)
+        self.dogDelegate?.dogSelected(self.data,indexPath.row,position)
     }
 
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        guard let touch = touches.first else {
+            return
+        }
+        position = touch.location(in: self.window)
+    }
 }
 
