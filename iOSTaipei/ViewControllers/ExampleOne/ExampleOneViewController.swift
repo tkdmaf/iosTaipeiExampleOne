@@ -40,6 +40,7 @@ class ExampleOneViewController: UIViewController {
     ]
     
     var collectionViewResult:[DogCollectionView] = []
+    var cellResults:[UITableViewCell] = []
     var transitionManager:UIViewControllerTransitioningDelegate!
 //    let transitionManager = ShowDogTransitionManager()
     
@@ -90,18 +91,18 @@ extension ExampleOneViewController : UITableViewDelegate , UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(indexPath.row)
+        let index = indexPath.row
+        guard cellResults.count <= index else {
+            return cellResults[index]
+        }
         let cell = UITableViewCell()
         let collection = showCollection(indexPath.row)
         cell.addSubview(collection)
+        cellResults.append(cell)
         return cell
     }
     
     func showCollection(_ index:Int) -> DogCollectionView{
-        guard collectionViewResult.count <= index else {
-            print("reuse")
-            return collectionViewResult[index]
-        }
-        print("create")
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.itemSize = CGSize(width: 120, height: 120)
@@ -111,7 +112,6 @@ extension ExampleOneViewController : UITableViewDelegate , UITableViewDataSource
         collection.dogDelegate = self
         collection.data = datas[index]
         collection.reloadData()
-        collectionViewResult.append(collection)
         return collection
     }
     
